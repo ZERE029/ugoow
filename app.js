@@ -28,3 +28,30 @@ return res.json({
     sit
 });
 })
+
+
+
+app.post("/users", (req, res) =>{
+var {name, email } = req.body;
+
+return res.json({
+    name: name,
+    email: email
+});
+})
+
+
+app.put("/users/:id", (req, res) =>{
+const {id}= req.params;
+const {_id, name, email,  situationId}=req.body;
+
+return res.json({id, _id, name, email, situationId});
+});
+
+
+app.delete("/users:id", (req, res) =>{
+const {id}= req.params;
+
+return res.json({id});
+});
+
