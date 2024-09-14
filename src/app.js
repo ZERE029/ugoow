@@ -1,12 +1,18 @@
-const express = require('express');
+import express from "express";
+import * as dotenv from "dotenv";
+import mongoose from "mongoose";
+dotenv.config();
+
+
 const app = express();
 
 app.use(express.json());
+app.use(express.static("public"));
 
 
 
 app.get("/", (req, res) => {
-    res.send("Bem vindo a nossa API.");
+   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 
